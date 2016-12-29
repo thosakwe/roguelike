@@ -24,6 +24,11 @@ class GameStateGenerator extends GeneratorForAnnotation<GameState> {
           .map((m) => m.name)
           .toList();
 
+      for (var methodName in found.where((str) => str != 'preload')) {
+        clazz.addMethod(new MethodBuilder.returnVoid(methodName)
+          ..addPositional(parameter('game', [new TypeBuilder('Game')])));
+      }
+
       // Create preload if present
 
       var preload = new MethodBuilder.returnVoid('preload')

@@ -8,6 +8,8 @@ part of states.dungeon;
 // **************************************************************************
 
 abstract class _$DungeonStateMixin {
+  void create(Game game) {}
+
   void preload(Game game) {
     game.load.spritesheet('tile', 'assets/tile.png', 30, 42);
   }

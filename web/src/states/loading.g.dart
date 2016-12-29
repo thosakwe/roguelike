@@ -8,6 +8,8 @@ part of states.loading;
 // **************************************************************************
 
 abstract class _$LoadingStateMixin {
+  void create(Game game) {}
+
   void preload(Game game) {
     game.load.spritesheet('kenyan', 'assets/kenyan_m1.png', 32, 48);
     game.load.spritesheet('chinese', 'assets/chinese_m1.png', 32, 48);

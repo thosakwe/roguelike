@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'dart:html' show window;
 import 'package:js/js.dart';
 import 'package:js/js_util.dart';
 import 'package:phaser/phaser.dart';
@@ -8,8 +8,8 @@ import 'constants.dart';
 class GameEngine {
   void start() {
     new Game(
-        window.innerWidth,
-        window.innerHeight,
+        window.innerWidth * window.devicePixelRatio,
+        window.innerHeight * window.devicePixelRatio,
         Phaser.AUTO,
         'game',
         jsify({
