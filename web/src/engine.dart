@@ -2,6 +2,8 @@ import 'dart:html';
 import 'package:js/js.dart';
 import 'package:js/js_util.dart';
 import 'package:phaser/phaser.dart';
+import 'states/states.dart';
+import 'constants.dart';
 
 class GameEngine {
   void start() {
@@ -16,9 +18,13 @@ class GameEngine {
         }));
   }
 
-  void preload(Game game) {}
+  void preload(Game game) {
+    game.state
+      ..add(States.LOADING, LoadingState)
+      ..add(States.DUNGEON, DungeonState);
+  }
 
   void create(Game game) {
-    print('Soon');
+    game.state.start(States.LOADING);
   }
 }

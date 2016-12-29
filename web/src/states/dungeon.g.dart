@@ -1,21 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of states.loading;
+part of states.dungeon;
 
 // **************************************************************************
 // Generator: GameStateGenerator
-// Target: class Loading
+// Target: class Dungeon
 // **************************************************************************
 
-abstract class _$LoadingStateMixin {
+abstract class _$DungeonStateMixin {
   void preload(Game game) {
-    game.load.spritesheet('kenyan', 'assets/kenyan_m1.png', 32, 48);
-    game.load.spritesheet('chinese', 'assets/chinese_m1.png', 32, 48);
-    game.load.spritesheet('arabian', 'assets/arabianboy.png', 32, 48);
+    game.load.spritesheet('tile', 'assets/tile.png', 30, 42);
   }
 
   get STATE =>
       jsify({'create': allowInterop(create), 'preload': allowInterop(preload)});
 }
 
-final LoadingState = new Loading().STATE;
+final DungeonState = new Dungeon().STATE;
